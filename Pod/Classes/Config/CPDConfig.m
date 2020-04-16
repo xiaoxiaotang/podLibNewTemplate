@@ -1,14 +1,15 @@
 //
-//  XZHomeConfig.m
-//  Pods-ios-shell-tuofu
+//  CPDConfig.m
+//  PROJECT
 //
-//  Created by 小站 on 2020/4/3.
+//  Created by PROJECT_OWNER on TODAYS_DATE.
+//  Copyright (c) TODAYS_YEAR PROJECT_OWNER. All rights reserved.
 //
 
-#import "XZHomeConfig.h"
-#import "XZHomeViewController.h"
+#import "CPDConfig.h"
+#import "CPDViewController.h"
 
-@implementation XZHomeConfig
+@implementation CPDConfig
 
 + (void)registerModuleConfig {
     [self registerRouterClass];
@@ -16,23 +17,23 @@
 }
 
 + (void)registerRouterClass {
-    NSArray *datas = @[
-                       @[XZHomeViewController.class, @protocol(XZHomeRouterProtocol)]
-                       ];
-    for (NSArray *ary in datas) {
-        if ([ary.lastObject isKindOfClass:[NSString class]]) {
-            [[XZClassProtocolMediator defaultContext] registerRouterClass:ary.firstObject forKey:ary.lastObject];
-        } else {
-            [[XZClassProtocolMediator defaultContext] registerRouterClass:ary.firstObject forProtocolKey:ary.lastObject];
-        }
-    }
+//    NSArray *datas = @[
+//                       @[CPDViewController.class, @protocol(CPDRouterProtocol)]
+//                       ];
+//    for (NSArray *ary in datas) {
+//        if ([ary.lastObject isKindOfClass:[NSString class]]) {
+//            [[XZClassProtocolMediator defaultContext] registerRouterClass:ary.firstObject forKey:ary.lastObject];
+//        } else {
+//            [[XZClassProtocolMediator defaultContext] registerRouterClass:ary.firstObject forProtocolKey:ary.lastObject];
+//        }
+//    }
 }
 
 + (void)registerProtocolClass {
-    NSArray *datas = @[];
-    for (NSArray *ary in datas) {
-        [[XZClassProtocolMediator defaultContext] registerProtocolClass:ary.firstObject forKey:ary.lastObject];
-    }
+//    NSArray *datas = @[];
+//    for (NSArray *ary in datas) {
+//        [[XZClassProtocolMediator defaultContext] registerProtocolClass:ary.firstObject forKey:ary.lastObject];
+//    }
 }
 
 @end

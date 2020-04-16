@@ -1,5 +1,5 @@
 //
-//  CPDConfig.h
+//  CPDRequestManagerAPI.h
 //  PROJECT
 //
 //  Created by PROJECT_OWNER on TODAYS_DATE.
@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CPDConfig : NSObject
-
-+ (void)registerModuleConfig ;
+@interface CPDRequestManagerAPI : NSObject
 
 @end
 

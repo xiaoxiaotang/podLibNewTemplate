@@ -1,18 +1,16 @@
 //
-//  CPDConfig.h
+//  CPDView.h
 //  PROJECT
 //
 //  Created by PROJECT_OWNER on TODAYS_DATE.
 //  Copyright (c) TODAYS_YEAR PROJECT_OWNER. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CPDConfig : NSObject
-
-+ (void)registerModuleConfig ;
+@interface CPDView : UIView
 
 @end
 

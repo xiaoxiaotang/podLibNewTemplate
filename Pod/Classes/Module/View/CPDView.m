@@ -1,13 +1,14 @@
 //
-//  XZHomeCell.m
-//  XZHomeModule
+//  CPDView.m
+//  PROJECT
 //
-//  Created by 小站 on 2020/4/3.
+//  Created by PROJECT_OWNER on TODAYS_DATE.
+//  Copyright (c) TODAYS_YEAR PROJECT_OWNER. All rights reserved.
 //
 
-#import "XZHomeCell.h"
+#import "CPDView.h"
 
-@implementation XZHomeCell
+@implementation CPDView
 
 /*
 // Only override drawRect: if you perform custom drawing.
