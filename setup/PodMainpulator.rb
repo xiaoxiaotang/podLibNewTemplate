@@ -18,7 +18,7 @@ module Pod
         "CPD" => @prefix
       }
       replace_internal_project_settings
-      rename_files
+      get_file_list(pod_path)
     end
 
     def rename_files
@@ -32,6 +32,22 @@ module Pod
         File.rename before, after
       end
     end
+
+    def get_file_list(path)
+        Dir.entries(path).each do |sub|   
+          if sub != '.' && sub != '..'
+            if File.directory?("#{path}/#{sub}")
+              get_file_list("#{path}/#{sub}")
+            else
+              before = "#{path}/#{sub}"
+              next unless File.exists? before
+
+              after = "#{path}/" + sub.gsub("CPD", prefix)
+              File.rename before, after
+            end
+          end
+        end
+     end
 
     def replace_internal_project_settings
       Dir.glob(pod_path + "/**/**/**/**").each do |name|
