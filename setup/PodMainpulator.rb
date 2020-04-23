@@ -1,3 +1,7 @@
+require 'find'
+require 'pathname'
+require 'fileutils'
+
 module Pod
 
   class PodMainpulator
@@ -23,11 +27,12 @@ module Pod
 
     def rename_files
       # change app file prefixes
-      Dir.glob(pod_path + "/**/**/**/**").each do |file|
-        before = pod_path + file
+     Find.find(pod_path) do |filename|
+        before = Pathname.new(filename)
+        primary_name = before.basename
         next unless File.exists? before
 
-        after = pod_path + file.gsub("CPD", prefix)
+        after = primary_name + filename.gsub("CPD", prefix)
         File.rename before, after
       end
     end
