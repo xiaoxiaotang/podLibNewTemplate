@@ -64,6 +64,12 @@ module Pod
         end
       end
 
+      Pod::PodMainpulator.new({
+        :configurator => @configurator,
+        :pod_path => "Pod/Classes/",
+        :prefix => @configurator.pod_name
+      }).run
+
       Pod::ProjectManipulator.new({
         :configurator => @configurator,
         :xcodeproj_path => "templates/ios/Example/PROJECT.xcodeproj",
@@ -74,7 +80,6 @@ module Pod
 
       # There has to be a single file in the Classes dir
       # or a framework won't be created, which is now default
-      `touch Pod/Classes/ReplaceMe.m`
       
       `mv ./templates/ios/* ./`
 
