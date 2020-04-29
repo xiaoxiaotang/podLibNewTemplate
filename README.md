@@ -19,7 +19,7 @@ git push -u origin master
 
 效果：
 
-https://github.com/xiaoxiaotang/podSubmoduleTemplate/blob/master/template.png
+![image](https://github.com/xiaoxiaotang/podSubmoduleTemplate/blob/master/template.png)
 
 以上文件都是根据TemplateModule名字自动生成
 
