@@ -5,7 +5,7 @@ pod-template
 
 cd 任意目录
 
-pod lib create TemplateModule --template-url=https://github.com/xiaoxiaotang/podLibNewTemplate.git
+pod lib create TemplateModule --template-url=https://github.com/xiaoxiaotang/podSubmoduleTemplate.git
 
 cd TemplateModule
 
