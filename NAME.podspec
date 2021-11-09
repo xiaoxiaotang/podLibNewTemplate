@@ -30,13 +30,26 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = '${POD_NAME}/Classes/**/*'
+  s.source_files = '${POD_NAME}/Classes/**/*', 'R.generated.swift'
   
-  s.resource_bundles = {
-     '${POD_NAME}' => ['${POD_NAME}/Assets/*.xcassets']
-  }
+  script1 = <<-CMD
+    "$PODS_ROOT/R.swift/rswift" generate "$PODS_TARGET_SRCROOT/R.generated.swift"
+  CMD
+  
+  s.script_phase = { :name => 'Run Rswift', :script => script1, :input_files => ['$TEMP_DIR/rswift-lastrun'], :output_files => ['$PODS_TARGET_SRCROOT/R.generated.swift'], :shell_path =>'/bin/sh', :execution_position => :before_compile}
+  
+  #  s.resource_bundles = {
+  #     '${POD_NAME}' => ['${POD_NAME}/Assets/*.xcassets']
+  #  }
+  
+  s.resources = '${POD_NAME}/Assets/**/*'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'WYSwiftyMediator' # 路由
+  s.dependency 'Localize-Swift' # 多语言
+  s.dependency 'R.swift'  # 资源文件
+  s.dependency 'SwifterSwift' # 扩展
+  
 end
